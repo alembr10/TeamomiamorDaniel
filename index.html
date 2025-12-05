@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>💖 Un correo para ti by myeya 💖</title>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --accent: #ff4f81;
+      --accent-dark: #ff2a66;
+      --text: #333;
+      --card-bg-line: #e3e3e3;
+      --card-border: #e5e5e5;
+    }
+
+    * { box-sizing: border-box; }
+    html,body { height: 100%; margin: 0; }
+    body {
+      font-family: "Poppins", sans-serif;
+      background-color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: var(--text);
+      padding: 24px;
+      transition: background-color .4s ease;
+    }
+
+    main { width: min(900px, 98%); }
+    h1 { display:none; }
+    h2 { margin-bottom: 12px; }
+
+    .screen { display: none; width: 100%; max-width: 600px; margin: 0 auto; animation: fadeIn 0.6s ease; }
+    .screen.active { display:block; }
+
+    .action-img {
+      display: inline-block; width: 280px; max-width: 100%; border: none; background: transparent; cursor: pointer; transition: transform .25s ease; padding: 0;
+    }
+    .action-img img { width: 100%; height: auto; display:block; pointer-events:none; }
+    .action-img:focus { outline: 3px solid rgba(255, 79, 129, 0.25); outline-offset: 3px; }
+    .action-img:hover { transform: scale(1.03); }
+
+    .card { background: repeating-linear-gradient(white, white 28px, var(--card-bg-line) 29px); border-radius: 0; padding: 36px; border: 2px solid var(--card-border); width: 100%; text-align: left; box-shadow: 0 0 15px rgba(0,0,0,.08); }
+    .card h3 { font-family: 'Dancing Script', cursive; font-size: 2em; color: #444; margin: 0 0 12px 0; }
+    .card p { font-family: 'Dancing Script', cursive; font-size: 1.18em; line-height: 1.55; color: #444; margin: 8px 0; }
+
+    .controls { margin-top: 18px; text-align: center; }
+    .btn { display: inline-flex; gap: 8px; align-items:center; padding: 10px 18px; border-radius: 8px; border: none; cursor: pointer; background: var(--accent); color: white; font-weight: 600; transition: background .2s ease, transform .08s ease; font-size: 1rem; }
+    .btn:hover { background: var(--accent-dark); }
+    .btn:active { transform: translateY(1px); }
+    .btn.secondary { background: #eaeaea; color:#333; }
+
+    /* Accessibility focus visible */
+    :focus-visible { outline: 3px solid rgba(255, 79, 129, 0.22); outline-offset: 3px; }
+
+    @keyframes fadeIn { from {opacity: 0; transform: scale(.98);} to {opacity: 1; transform: scale(1);} }
+
+    /* Reduced motion */
+    @media (prefers-reduced-motion: reduce){ .action-img, .screen, .card { transition: none; animation: none; } }
+
+    @media (max-width: 480px) { .card { padding: 28px; } }
+
+  </style>
+</head>
+<body>
+  <main id="app" tabindex="-1" aria-live="polite">
+    <h1>Un correo para ti</h1>
+
+    <section class="screen active" id="screen1" aria-hidden="false">
+      <h2>Hola, te llegó un correo</h2>
+      <button class="action-img" aria-label="Abrir correo — siguiente" data-next="2" role="button" tabindex="0">
+        <img src="https://acortar.link/XPC32D" alt="Correo cerrado" loading="lazy" />
+      </button>
+    </section>
+
+    <section class="screen" id="screen2" aria-hidden="true">
+      <h2>Una cartita para ti</h2>
+      <button class="action-img" aria-label="Ver carta — siguiente" data-next="3" role="button" tabindex="0">
+        <img src="https://acortar.link/BgOep0" alt="Carta cerrada" loading="lazy" />
+      </button>
+    </section>
+
+    <section class="screen" id="screen3" aria-hidden="true">
+      <h2>¡Ábrelo!</h2>
+      <button class="action-img" aria-label="Abrir sobre — siguiente" data-next="4" role="button" tabindex="0">
+        <img src="https://acortar.link/IieZ60" alt="Sobre" loading="lazy" />
+      </button>
+    </section>
+
+    <section class="screen" id="screen4" aria-hidden="true">
+      <h2>¿Qué dirá?</h2>
+      <button class="action-img" aria-label="Ver contenido — siguiente" data-next="5" role="button" tabindex="0">
+        <img src="https://acortar.link/ylGOP0" alt="Carta lista para leer" loading="lazy" />
+      </button>
+    </section>
+
+    <section class="screen" id="screen5" aria-hidden="true">
+      <div class="card" role="article" aria-label="Carta completa">
+        <h3>Querido Daniel,</h3>
+        <p>Amor, desde que te conocí me hiciste muy feliz con tus mensajes, cariño y las cosas que me decías. Te amo demasiado mi niño. Eres quien ilumina mis días; no puedo pasar un momento sin ti porque te extraño. No sabes cuánto desearía tenerte a mi lado ahora mismo; pero no se puede. Algún día estaremos felices y juntos...</p>
+        <p>Me encantas. Eres el mejor, mi niño churro: precioso, guapo, hermoso, extraordinario y bello. No sabes lo hermoso que eres para mí y no hay palabra que describa lo bello que eres: tus ojos, cada parte de ti... simplemente eres perfecto. Tu voz... TODO LO AMO.</p>
+        <p>Eres alguien especial para mí. Te valoro, te admiro y, sobre todo, te tengo un cariño enorme. Te amo, mi niño, eres una de las mejores cosas que me ha pasado y agradezco todo lo que haces por mí: soportarme, quererme, cada una de las cosas — simplemente me hace muy feliz, amor mío. Te quisiera tener para besarte y cumplir cada uno de los planes que nos prometemos. No importa porque algún día pasará, LO SÉ amor, LO SÉ... Muak, te amo mucho, eres mi príncipe. NUNCA LO OLVIDES.</p>
+        <p>Con mucho amor,</p>
+        <p>Ale tu marido 💌</p>
+      </div>
+      <div class="controls">
+        <button class="btn secondary" data-goto="1" aria-label="Regresar a inicio">🔙 Regresar</button>
+        <button class="btn" id="shareButton" aria-label="Compartir carta">🔗 Compartir</button>
+        <button class="btn" id="printButton" aria-label="Imprimir carta">🖨️ Imprimir</button>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const screens = document.querySelectorAll('.screen');
+
+      function setActiveScreen(num) {
+        screens.forEach(s => {
+          const match = s.id === ('screen' + num);
+          s.classList.toggle('active', match);
+          s.setAttribute('aria-hidden', (!match).toString());
+          if (match) {
+            const focusEl = s.querySelector('.action-img, .btn, [tabindex]');
+            if (focusEl) focusEl.focus();
+          }
+        });
+      }
+
+      // Click handlers for next/goto buttons
+      document.addEventListener('click', (ev) => {
+        let el = ev.target;
+        if (el.tagName === 'IMG' && el.parentElement && el.parentElement.dataset.next) el = el.parentElement;
+        if (!el) return;
+        const next = el.dataset && el.dataset.next;
+        if (next) { setActiveScreen(next); return; }
+        const goto = el.dataset && el.dataset.goto;
+        if (goto) { setActiveScreen(goto); return; }
+      });
+
+      // Keyboard nav (Arrow Right/Left, Enter, Space)
+      document.addEventListener('keydown', (e) => {
+        // find active index
+        const activeIndex = Array.from(screens).findIndex(s => s.classList.contains('active')) + 1;
+        if (!activeIndex) return;
+        if (e.key === 'ArrowRight' || e.key === 'Enter' || e.key === ' ') {
+          if (activeIndex < screens.length) { setActiveScreen(activeIndex + 1); e.preventDefault(); }
+        } else if (e.key === 'ArrowLeft' || e.key === 'Backspace') {
+          if (activeIndex > 1) { setActiveScreen(activeIndex - 1); e.preventDefault(); }
+        } else if (e.key === 'Escape') {
+          setActiveScreen(1); e.preventDefault();
+        }
+      });
+
+      // Make action images keyboard accessible
+      document.querySelectorAll('.action-img').forEach(btn => {
+        btn.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            const next = btn.dataset.next; if (next) setActiveScreen(next); e.preventDefault();
+          }
+        });
+      });
+
+      // Share and Print
+      const shareButton = document.getElementById('shareButton');
+      if (shareButton) {
+        shareButton.addEventListener('click', async () => {
+          const text = document.querySelector('.card').innerText || document.querySelector('.card').textContent;
+          if (navigator.share) {
+            try { await navigator.share({ title: document.title, text }); }
+            catch (err) { /* user cancelled or not supported */ }
+          } else if (navigator.clipboard) {
+            try { await navigator.clipboard.writeText(text); alert('Texto copiado!'); }
+            catch (err) { alert('No se pudo copiar; por favor selecciona y copia manualmente.'); }
+          } else {
+            alert('Tu navegador no soporta compartir/copiado automático.');
+          }
+        });
+      }
+
+      const printButton = document.getElementById('printButton');
+      if (printButton) {
+        printButton.addEventListener('click', () => window.print());
+      }
+
+      // Start at first screen
+      setActiveScreen(1);
+    });
+  </script>
+</body>
+</html>
